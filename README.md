@@ -143,8 +143,12 @@ Error.traceKind='normal';
 //To select only continuable traces:
 Error.traceKind='continuable';
 
-//You can clean error traces of internal API calls. Of course, only do this with well tested code where the traces no longer shows relevant information.
-//The parameter is an array, and you can remove items with stackArray.slice(index,count); You cannot return a new array (only in-place changes).
+//You can clean error traces of internal API calls. Of course, only do
+//this with well tested code where the traces no longer show relevant information.
+//The parameter is an array, and you can remove items with
+//stackArray.slice(index,count);
+//You cannot return a new array (only in-place changes).
+
 wrapCb.clean=function(stackArray){
   for (var i=stackArray.length-1;i>=0;i--){ //Make sure to go backwards: We're deleting items.
     if (/mylib.js/.exec(stackArray[i])) stackArray.slice(i,1);
@@ -153,7 +157,8 @@ wrapCb.clean=function(stackArray){
 
 //usage:
 
-//Note that named function expressions show up better in the stack. There are issues with named function expressions, but not in v8.
+//Note that named function expressions show up better in the stack. There are issues
+//with named function expressions, but not in v8.
 process.nextTick(wrapCb(function tickHandler(){
   throw new Error('Oh noes!');
 }));
