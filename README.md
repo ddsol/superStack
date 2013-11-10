@@ -73,19 +73,6 @@ Error: Oh noes!
     at Function.Module.runMain (module.js:490:10)
     at startup (node.js:121:16)
     at node.js:761:3
-Error: Oh noes!
-    at wake2 (C:\superStack\test.js:17:11)
-    via sleep
-    at wake1 (C:\superStack\test.js:16:3)
-    via sleep
-    at Object.<anonymous> (C:\superStack\test.js:15:1)
-    at Module._compile (module.js:449:26)
-    at Object.Module._extensions..js (module.js:467:10)
-    at Module.load (module.js:349:32)
-    at Function.Module._load (module.js:305:12)
-    at Function.Module.runMain (module.js:490:10)
-    at startup (node.js:121:16)
-    at node.js:761:3
 ```
 
 Now we have a complete stack trace.
