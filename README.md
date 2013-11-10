@@ -173,8 +173,10 @@ require('fs').stat("/doesn't exist",wrapCb(function statCb(err,item){
 I assume here you're importing superstack.js as wrapCb. You can use any name you like, of course, but it wraps callbacks, so a name that relects that seems appropriate.
 
 The parameters for wrapCb are:
-wrapCb(callback,context,preRemovalDepth,postRemovalDepth,viaName);
 
+```JavaScript
+wrapCb(callback,context,preRemovalDepth,postRemovalDepth,viaName);
+```
 * callback: The callback you want to wrap.
 * context [optional]: The 'this' parameter passed to the callback. If you leave it out, the normal 'this' parameter will be passed on. Cannot be a number or a string.
 * preRemovalDepth [optional]: How many items of the end of the stack at wrap-time to leave off the top of the trace. Internal details of api functions can be left out this way.
