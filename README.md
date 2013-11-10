@@ -163,7 +163,7 @@ process.nextTick(wrapCb(function tickHandler(){
   throw new Error('Oh noes!');
 }));
 
-//Also works with continuables (error is first param, callback is last param):
+//Also works with continuables (error is first param and is an instance of Error):
 require('fs').stat("/doesn't exist",wrapCb(function statCb(err,item){
   if (err) return console.log(err.stack);
   console.log('Got:',item);
